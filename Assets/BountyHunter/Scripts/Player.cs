@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
@@ -22,24 +23,26 @@ public class Player : MonoBehaviour
 
     private float nextFireTime; // Time when the player can shoot next
 
+    //Photon
+    PhotonView view;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
         Cursor.visible = false; // Hide the cursor
+
+        view = GetComponent<PhotonView>();
     }
 
     void Update()
     {
-        Move();
-        CameraLook();
-
-        //Projectile shooting
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
+        if (view.IsMine)
         {
+            Move();
+            CameraLook();
             Shoot();
-            nextFireTime = Time.time + 1f / fireRate; // Calculate next fire time based on fire rate
         }
     }
 
@@ -66,6 +69,15 @@ public class Player : MonoBehaviour
     }
 
     void Shoot()
+    {
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
+        {
+            ShootProjectile();
+            nextFireTime = Time.time + 1f / fireRate; // Calculate next fire time based on fire rate
+        }
+    }
+
+    void ShootProjectile()
     {
         // Calculate the direction to shoot the projectile
         Vector3 shootDirection = playerCamera.transform.forward;
