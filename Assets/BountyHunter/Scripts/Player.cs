@@ -28,16 +28,17 @@ public class Player : MonoBehaviour
 
     public GameObject cameraGO;
     public GameObject playerMesh;
-
+    public Animator anim;
 
     void Start()
     {
+        anim = playerMesh.GetComponent<Animator>();
         view = GetComponent<PhotonView>();
 
         if (view.IsMine)
         {
-            if (playerMesh != null)
-            playerMesh.SetActive(false);
+           // if (playerMesh != null)
+           // playerMesh.SetActive(false);
         }
         else
         {
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
         Cursor.visible = false; // Hide the cursor
+
 
     }
 
@@ -69,6 +71,9 @@ public class Player : MonoBehaviour
         Vector3 movement = transform.right * moveX + transform.forward * moveZ;
         movement.y = rb.velocity.y; // Keep the existing vertical velocity (for jumping or falling)
         rb.velocity = movement;
+
+        anim.SetBool("Walking", moveX > 0 | moveZ>0);
+
     }
 
     void CameraLook() //Player Look
