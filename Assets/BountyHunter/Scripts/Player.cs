@@ -26,14 +26,29 @@ public class Player : MonoBehaviour
     //Photon
     PhotonView view;
 
+    public GameObject cameraGO;
+    public GameObject playerMesh;
+
 
     void Start()
     {
+        view = GetComponent<PhotonView>();
+
+        if (view.IsMine)
+        {
+            if (playerMesh != null)
+            playerMesh.SetActive(false);
+        }
+        else
+        {
+            if(cameraGO != null)
+            cameraGO.SetActive(false);
+        }
+
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
         Cursor.visible = false; // Hide the cursor
 
-        view = GetComponent<PhotonView>();
     }
 
     void Update()
