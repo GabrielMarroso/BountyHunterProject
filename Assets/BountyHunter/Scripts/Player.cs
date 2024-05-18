@@ -32,13 +32,13 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        anim = playerMesh.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         view = GetComponent<PhotonView>();
 
         if (view.IsMine)
         {
-           // if (playerMesh != null)
-           // playerMesh.SetActive(false);
+            if (playerMesh != null)
+            playerMesh.SetActive(false);
         }
         else
         {
