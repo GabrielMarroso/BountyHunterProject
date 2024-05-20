@@ -9,6 +9,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
 
     [SerializeField] GameObject playerPrefab;
+    [SerializeField] GameObject enemyPrefab;
 
 
     private void Start()
@@ -55,6 +56,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //photonView, chamado remoto
 
         CreatePlayerAvatar();
+        CreateEnemies();
     }
 
    // [PunRPC]
@@ -72,6 +74,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Player instanciated");
     }
 
-
+    void CreateEnemies()
+    {
+        Vector3 _pos = new Vector3(Random.Range(-3f, 3f), 2f, Random.Range(-10f, 10f));
+        PhotonNetwork.Instantiate(enemyPrefab.name, _pos, Quaternion.identity);
+    }
 
 }
