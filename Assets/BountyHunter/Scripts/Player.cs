@@ -57,9 +57,16 @@ public class Player : MonoBehaviour
     {
         if (view.IsMine)
         {
+            Shoot();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (view.IsMine) 
+        {
             Move();
             CameraLook();
-            Shoot();
         }
     }
 
@@ -85,7 +92,7 @@ public class Player : MonoBehaviour
         rotX = Mathf.Clamp(rotX, minLookX, maxLookX);
 
         playerCamera.transform.localRotation = Quaternion.Euler(rotX, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+        rb.MoveRotation(transform.rotation * Quaternion.AngleAxis(mouseX, Vector3.up));
     }
 
     void Shoot()
