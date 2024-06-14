@@ -47,8 +47,8 @@ public class Player : MonoBehaviour
         }
 
         rb = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
-        Cursor.visible = false; // Hide the cursor
+      //  Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
+      //  Cursor.visible = false; // Hide the cursor
 
 
     }
