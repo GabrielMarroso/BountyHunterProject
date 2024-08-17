@@ -25,6 +25,8 @@ public class SinglePlayer : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         rb = GetComponent<Rigidbody>();
 
     }

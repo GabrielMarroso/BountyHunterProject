@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cena02_Lab.unity
     guid: 04c4bf661a62645478095f78664ea77f
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer.unity
+    guid: c3db9b105b11a384797f4da304f23aae
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayerDeath.unity
+    guid: d1abf6386492f0f4aa3cdb2f57f9ac2f
   m_configObjects: {}
