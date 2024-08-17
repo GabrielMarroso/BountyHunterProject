@@ -93,8 +93,8 @@ MonoBehaviour:
   speed: 5
   maxHealth: 30
   damage: 100
-  detectionRange: 50
-  player: {fileID: 6832878821019219898, guid: dba5890b9c6210247ab18ece4b65aa88, type: 3}
+  detectionRange: 10000
+  player: {fileID: 0}
 --- !u!135 &5999494758338708728
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -177,19 +177,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 611e5736c5393b84babd87410ad62dd0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.039011113
+      value: -0.50130725
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 611e5736c5393b84babd87410ad62dd0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.03901112
+      value: 0.50130725
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 611e5736c5393b84babd87410ad62dd0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7060299
+      value: -0.49868938
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 611e5736c5393b84babd87410ad62dd0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7060299
+      value: -0.49868938
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 611e5736c5393b84babd87410ad62dd0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 611e5736c5393b84babd87410ad62dd0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -173.675
+      value: -270.3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 611e5736c5393b84babd87410ad62dd0, type: 3}
       propertyPath: m_Name
