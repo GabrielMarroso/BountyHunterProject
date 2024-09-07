@@ -18,4 +18,10 @@ public class DeathMenu : MonoBehaviour
         SceneManager.LoadScene("SinglePlayer");
 
     }
+
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+
+    }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TermsManager : MonoBehaviour
 {
@@ -11,12 +12,11 @@ public class TermsManager : MonoBehaviour
 
     public void AcceptTerms()
     {
-
-
+        SceneManager.LoadScene("Menu");
     }
 
     public void DeclineTerms()
     {
-        
+        Application.Quit();
     }
 }
