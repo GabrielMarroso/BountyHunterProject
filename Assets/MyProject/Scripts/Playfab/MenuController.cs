@@ -23,7 +23,10 @@ public class MenuController : MonoBehaviourPunCallbacks
         Shop,
         Lobby,
         SearchingOpponent,
-        CharacterSelection
+        CharacterSelection,
+        Options,
+        CreateRoom,
+        JoinRoom
         
     }
     public Screens currentScreen;
@@ -39,6 +42,11 @@ public class MenuController : MonoBehaviourPunCallbacks
     [SerializeField] GameObject lobbyScreen;
     [SerializeField] GameObject searchingOpponentScreen;
     [SerializeField] GameObject characterSelectionScreen;
+    [SerializeField] GameObject optionsScreen;
+    [SerializeField] GameObject createRoomScreen;
+    [SerializeField] GameObject joinRoomScreen;
+
+
     [SerializeField] TextMeshProUGUI messageTXT;
 
     [Header("Login Information")]
@@ -104,6 +112,11 @@ public class MenuController : MonoBehaviourPunCallbacks
         lobbyScreen.SetActive(false);
         searchingOpponentScreen.SetActive(false);
         characterSelectionScreen.SetActive(false);
+        optionsScreen.SetActive(false);
+        createRoomScreen.SetActive(false);
+        joinRoomScreen.SetActive(false);
+
+
 
         switch (currentScreen)
         {
@@ -152,6 +165,18 @@ public class MenuController : MonoBehaviourPunCallbacks
                 timeRemaining = NetworkManager.instance.timeToSelectHero;
                 btnReady.interactable = false;
                 characterSelectionScreen.SetActive(true);
+                break;
+
+            case Screens.Options:
+                optionsScreen.SetActive(true);
+                break;
+
+            case Screens.CreateRoom:
+                optionsScreen.SetActive(true);
+                break;
+
+            case Screens.JoinRoom:
+                optionsScreen.SetActive(true);
                 break;
         }
     }
@@ -315,7 +340,20 @@ public class MenuController : MonoBehaviourPunCallbacks
     {
         // ShowScreen(Screens.SearchingOpponent);
         lobbyScreen.SetActive(false);
+        createRoomScreen.SetActive(false);
+        joinRoomScreen.SetActive(false);
         SceneManager.LoadScene(1);
+    }
+    public void BtnCreateRoom()
+    {
+        lobbyScreen.SetActive(false);
+        createRoomScreen.SetActive(true);
+    }
+
+    public void BtnJoinRoom()
+    {
+        lobbyScreen.SetActive(false);
+        joinRoomScreen.SetActive(true);
     }
 
     public void BtnReturnToLobby()
@@ -330,6 +368,7 @@ public class MenuController : MonoBehaviourPunCallbacks
 
     public void BtnOptions()
     {
+        ShowScreen(Screens.Options);
 
     }
 
