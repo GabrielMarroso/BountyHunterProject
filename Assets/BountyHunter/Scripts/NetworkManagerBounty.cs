@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 
 
-public class NetworkManager : MonoBehaviourPunCallbacks
+public class NetworkManagerBounty : MonoBehaviourPunCallbacks
 {
 
     [SerializeField] GameObject playerPrefab;

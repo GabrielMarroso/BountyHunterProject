@@ -8,16 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TermsA.unity
     guid: 9e67894bc1fde9e42aaff47c7702b69b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TermsB.unity
     guid: d47a02932943ec34da63bf85933542d4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 0a4adf5e70535744883e7693adb640cb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayer.unity
     guid: c3db9b105b11a384797f4da304f23aae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayerDeath.unity
     guid: d1abf6386492f0f4aa3cdb2f57f9ac2f
+  - enabled: 1
+    path: Assets/Scenes/Cena02_Lab.unity
+    guid: 04c4bf661a62645478095f78664ea77f
   m_configObjects: {}

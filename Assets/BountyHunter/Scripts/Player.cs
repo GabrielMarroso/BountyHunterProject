@@ -47,8 +47,8 @@ public class Player : MonoBehaviour
         }
 
         rb = GetComponent<Rigidbody>();
-      //  Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
-      //  Cursor.visible = false; // Hide the cursor
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
+       Cursor.visible = false; // Hide the cursor
 
 
     }
@@ -58,6 +58,9 @@ public class Player : MonoBehaviour
         if (view.IsMine)
         {
             Shoot();
+            CameraLook();
+            Move();
+
         }
     }
 
@@ -65,8 +68,8 @@ public class Player : MonoBehaviour
     {
         if (view.IsMine) 
         {
-            Move();
-            CameraLook();
+            //Move();
+            //CameraLook();
         }
     }
 
