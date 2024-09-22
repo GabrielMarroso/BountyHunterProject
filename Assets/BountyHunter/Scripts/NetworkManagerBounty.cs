@@ -46,6 +46,7 @@ public class NetworkManagerBounty : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("OnCreatedRoom");
+        InvokeRepeating("CreateEnemies", 2.0f, 10f);
     }
 
     public override void OnJoinedRoom()

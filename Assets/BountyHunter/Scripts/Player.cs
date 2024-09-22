@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
+using PlayFab;
+
 
 public class Player : MonoBehaviour
 {
@@ -33,6 +36,10 @@ public class Player : MonoBehaviour
     public float health = 100;
     public bool gameOver = false;
     public int score = 0;
+
+    //Playfab
+    [SerializeField] string rankingName;
+
 
     void Start()
     {
@@ -130,9 +137,22 @@ public class Player : MonoBehaviour
     {
         health -= damage;
         if (health <= 0)
-        {
-           
+        {     
             gameOver = true;
+            Cursor.lockState = CursorLockMode.None; // Lock the cursor to the center of the screen
+            Cursor.visible = true; // Hide the cursor
+            GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        if (gameOver)
+        {
+            PlayfabManager.instance.UpdatePlayerScore(rankingName, score);
+
+            SceneManager.LoadScene(0);
+
         }
     }
 
