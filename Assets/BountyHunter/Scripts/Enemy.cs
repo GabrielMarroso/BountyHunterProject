@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player; // Reference to the player's transform
+    public Transform playerPos; // Reference to the player's transform
     public GameObject projectilePrefab; // Prefab of the projectile to be fired
     public Transform shootPoint; // Point from where the projectile will be fired
     public float projectileSpeed = 10f; // Speed of the projectile
     public float fireRate = 2f; // Rate of fire (shots per second)
+
+    public float enemyHealth = 30;
 
     public float moveSpeed = 3f; // Speed of random movement
     public float moveRange = 5f; // Range of random movement
@@ -22,7 +24,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         // Find the player by tag
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
         SetRandomTargetPosition();
     }
@@ -49,10 +51,22 @@ public class Enemy : MonoBehaviour
         MoveToTargetPosition();
     }
 
+    public void TakeDamage(float damage)
+    {
+        enemyHealth -= damage;
+        if(enemyHealth <= 0)
+        {
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<Player>();
+            player.addScore(1);  
+            Destroy(gameObject);
+
+        }
+    }
+
     void Shoot()
     {
         // Calculate the direction to shoot the projectile towards the player
-        Vector3 shootDirection = (player.position - shootPoint.position).normalized;
+        Vector3 shootDirection = (playerPos.position - shootPoint.position).normalized;
 
         // Instantiate the projectile at the shoot point
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);

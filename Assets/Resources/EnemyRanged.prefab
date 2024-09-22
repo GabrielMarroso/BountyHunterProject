@@ -50,12 +50,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae111a9836b8e746b83999fe2c4ae0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  projectilePrefab: {fileID: 3072822347472537043, guid: e5a1213bb66b5f1468e36b1d78847cb2,
+  playerPos: {fileID: 0}
+  projectilePrefab: {fileID: 3072822347472537043, guid: 778e3812aa1ea8747a0783b67b2d89e2,
     type: 3}
   shootPoint: {fileID: 867189390876553761}
   projectileSpeed: 100
   fireRate: 1
+  enemyHealth: 30
   moveSpeed: 3
   moveRange: 5
   changeDirectionInterval: 2

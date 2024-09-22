@@ -30,6 +30,10 @@ public class Player : MonoBehaviour
     public GameObject playerMesh;
     public Animator anim;
 
+    public float health = 100;
+    public bool gameOver = false;
+    public int score = 0;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -120,5 +124,21 @@ public class Player : MonoBehaviour
         rb.velocity = shootDirection * projectileSpeed;
 
         // Optionally, add some logic here to handle projectile lifetime or other behaviors
+    }
+
+    public void PlayerTakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+           
+            gameOver = true;
+        }
+    }
+
+    public void addScore(int scorePoints)
+    {
+        score += scorePoints;
+        Debug.Log(score);
     }
 }

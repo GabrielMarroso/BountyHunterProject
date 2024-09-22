@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float lifetime = 5f; // Time in seconds before the projectile is destroyed
-    public int damage = 10; // Damage dealt by the projectile
+    public float damage = 10; // Damage dealt by the projectile
 
 
     void Start()
@@ -21,15 +21,16 @@ public class Projectile : MonoBehaviour
             Debug.Log("hitEnemy");
 
             // Get the FlyingSkull script and apply damage
-          //  FlyingEnemy enemy = collision.gameObject.GetComponent<FlyingEnemy>();
-        //    if (enemy != null)
-          //  {
-            //    enemy.TakeDamage(damage);
-           // }
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+           {
+               enemy.TakeDamage(damage);
+            }
 
             // Destroy the projectile on impact
-           // Destroy(gameObject);
+            Destroy(gameObject);
         }
+ 
     }
 
 }

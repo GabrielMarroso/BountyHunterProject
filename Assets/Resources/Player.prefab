@@ -283,6 +283,9 @@ MonoBehaviour:
   cameraGO: {fileID: 5636123881251158599}
   playerMesh: {fileID: 7738994558063156325}
   anim: {fileID: 4992636583712122175}
+  health: 100
+  gameOver: 0
+  score: 0
 --- !u!136 &4261793936132082805
 CapsuleCollider:
   m_ObjectHideFlags: 0
