@@ -167,12 +167,12 @@ public class MenuController : MonoBehaviourPunCallbacks
         if (string.IsNullOrEmpty(_usernameOrEmail) ||
             string.IsNullOrEmpty(_password))
         {
-            ShowMessage("Favor preencher todos os campos!");
+            ShowMessage("Please fill out all fields");
             ShowScreen(Screens.Login);
         }
         else if(_usernameOrEmail.Length < 3)
         {
-            ShowMessage("Dados de usuário inválidos!");
+            ShowMessage("Invalid user data");
             ShowScreen(Screens.Login);
         }
         else
@@ -195,20 +195,20 @@ public class MenuController : MonoBehaviourPunCallbacks
             string.IsNullOrEmpty(_password) || 
             string.IsNullOrEmpty(_confirmPassword) )
         {
-            Debug.Log("Favor preencher todos os campos!");
-            ShowMessage("Favor preencher todos os campos!");
+            Debug.Log("Please fill out all fields");
+            ShowMessage("Please fill out all fields");
             ShowScreen(Screens.CreateAccount);
         }
         else if(_username.Length < 3)
         {
-            Debug.Log("Username precisa ter ao menos 3 caracteres");
-            ShowMessage("Username precisa ter ao menos 3 caracteres");
+            Debug.Log("Username must be at least 3 characters long");
+            ShowMessage("Username must be at least 3 characters long");
             ShowScreen(Screens.CreateAccount);
         }
         else if(_password != _confirmPassword)
         {
-            Debug.Log("A senha não confere! Favor verificar a senha digitada!");
-            ShowMessage("A senha não confere! Favor verificar a senha digitada!");
+            Debug.Log("Passwords do not match");
+            ShowMessage("Passwords do not match");
             ShowScreen(Screens.CreateAccount);
         }
         else
@@ -313,13 +313,24 @@ public class MenuController : MonoBehaviourPunCallbacks
     #region Lobby
     public void BtnPlay()
     {
-       // ShowScreen(Screens.SearchingOpponent);
+        // ShowScreen(Screens.SearchingOpponent);
+        lobbyScreen.SetActive(false);
         SceneManager.LoadScene(1);
     }
 
     public void BtnReturnToLobby()
     {
         ShowScreen(Screens.Lobby);
+    }
+
+    public void BtnQuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void BtnOptions()
+    {
+
     }
 
 
