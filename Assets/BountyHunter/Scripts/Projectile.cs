@@ -18,15 +18,17 @@ public class Projectile : MonoBehaviour
         // Check if the projectile hits an enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("hitEnemy");
+
             // Get the FlyingSkull script and apply damage
-            FlyingEnemy enemy = collision.gameObject.GetComponent<FlyingEnemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
+          //  FlyingEnemy enemy = collision.gameObject.GetComponent<FlyingEnemy>();
+        //    if (enemy != null)
+          //  {
+            //    enemy.TakeDamage(damage);
+           // }
 
             // Destroy the projectile on impact
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
 

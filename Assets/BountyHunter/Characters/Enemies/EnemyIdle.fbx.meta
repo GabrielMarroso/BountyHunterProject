@@ -15,7 +15,7 @@ ModelImporter:
       name: T_Metal
     second: {fileID: 2800000, guid: 0cd5a804abdf3ac4f94c9c04f8156a66, type: 3}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
