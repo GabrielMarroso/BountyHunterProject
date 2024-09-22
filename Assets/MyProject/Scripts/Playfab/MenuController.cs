@@ -278,7 +278,7 @@ public class MenuController : MonoBehaviourPunCallbacks
 
     public void UpdatePlayerRanking(int _value)
     {
-        rankingTxt.text = "Ranking Atual: " + _value.ToString();
+        rankingTxt.text = "Highscore: " + _value.ToString();
     }
 
     public void UpdateRankingList(string _list)
