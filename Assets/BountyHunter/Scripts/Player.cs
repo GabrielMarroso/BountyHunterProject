@@ -120,11 +120,14 @@ public class Player : MonoBehaviour
 
     void ShootProjectile()
     {
-        // Calculate the direction to shoot the projectile
-        Vector3 shootDirection = playerCamera.transform.forward;
+        // Get the center of the screen
+        Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
         // Instantiate the projectile at the shoot point
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+
+        // Calculate the direction from the shoot point to where the ray hits
+        Vector3 shootDirection = ray.direction;
 
         // Get the Rigidbody component of the projectile and set its velocity
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
