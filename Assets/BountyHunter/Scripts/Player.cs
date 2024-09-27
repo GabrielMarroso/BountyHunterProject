@@ -155,6 +155,8 @@ public class Player : MonoBehaviour
             PlayfabManager.instance.UpdatePlayerScore(rankingName, score);
 
             SceneManager.LoadScene(0);
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.LeaveLobby();
 
         }
     }

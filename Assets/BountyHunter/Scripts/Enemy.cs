@@ -62,9 +62,10 @@ public class Enemy : MonoBehaviour
 
         }
     }
-
+    
     void Shoot()
     {
+    /*
         // Calculate the direction to shoot the projectile towards the player
         Vector3 shootDirection = (playerPos.position - shootPoint.position).normalized;
 
@@ -74,7 +75,9 @@ public class Enemy : MonoBehaviour
         // Get the Rigidbody component of the projectile and set its velocity
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.velocity = shootDirection * projectileSpeed;
+    */
     }
+
 
     void SetRandomTargetPosition()
     {
